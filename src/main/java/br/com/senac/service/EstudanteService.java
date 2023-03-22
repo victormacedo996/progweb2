@@ -39,8 +39,8 @@ public class EstudanteService {
 		return ResponseEntity.status(HttpStatus.CREATED).body(estudante);
 	}
 	
-	public ResponseEntity<Estudante> atualizarEstudante(Estudante estudante){
-		Estudante result = listaEstudantes.replace(estudante.getId(), estudante);
+	public ResponseEntity<Estudante> atualizarEstudante(Long id, Estudante estudante){
+		Estudante result = listaEstudantes.replace(id, estudante);
 		if (result == null) {
 			return ResponseEntity.status(HttpStatus.NOT_MODIFIED).body(null);
 		}
